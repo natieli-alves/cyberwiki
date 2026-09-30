@@ -748,3 +748,223 @@ body {
     font-size: 29px;
   }
 }
+
+/* =========================
+   PÁGINA SOBRE
+========================= */
+
+.about-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 90px 20px 110px;
+}
+
+.about-page > h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.about-page > h1 span {
+  background: linear-gradient(
+    90deg,
+    #a78bfa,
+    #7c3aed
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-intro {
+  max-width: 700px;
+  color: #aaa0bb;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 70px;
+}
+
+.about-section {
+  padding: 55px 0;
+  border-top: 1px solid #21172f;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-section > p {
+  max-width: 800px;
+  color: #aaa0bb;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* CARDS */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.about-card {
+  padding: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      #160d26,
+      #100a19
+    );
+  border: 1px solid #291a40;
+  border-radius: 16px;
+  transition: 0.25s;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  border-color: #8b5cf6;
+  box-shadow:
+    0 12px 35px rgba(109, 40, 217, 0.18);
+}
+
+.about-card span {
+  font-size: 30px;
+}
+
+.about-card h3 {
+  margin: 18px 0 10px;
+  font-size: 19px;
+}
+
+.about-card p {
+  color: #8f849f;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* TECNOLOGIAS */
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.tech-list span {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #160d26;
+  border: 1px solid #342052;
+  color: #c8b9e8;
+  font-size: 14px;
+}
+
+/* CTA */
+
+.about-cta {
+  margin-top: 40px;
+  padding: 70px 30px;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(109, 40, 217, 0.2),
+      transparent 65%
+    );
+
+  border-top: 1px solid #21172f;
+}
+
+.about-cta h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.about-cta p {
+  color: #968ba6;
+  margin-bottom: 28px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+  .about-page {
+    padding: 65px 20px 80px;
+  }
+
+  .about-page > h1 {
+    font-size: 35px;
+  }
+
+  .about-intro {
+    font-size: 16px;
+    margin-bottom: 45px;
+  }
+
+  .about-section {
+    padding: 45px 0;
+  }
+
+  .about-section h2 {
+    font-size: 25px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .about-cta {
+    padding: 55px 20px;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .about-page > h1 {
+    font-size: 30px;
+  }
+
+}
+
+.back-home {
+  display: block;
+  width: fit-content;
+  margin: 22px auto 0;
+  color: #8f849f;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-home:hover {
+  color: #a78bfa;
+}
+
+.back-to-top {
+  text-align: center;
+  padding: 25px 20px 35px;
+}
+
+.back-to-top a {
+  color: #8f849f;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-to-top a:hover {
+  color: #a78bfa;
+}

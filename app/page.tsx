@@ -1,9 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import {
+  LockKeyhole,
+  Network,
+  ShieldCheck,
+  Bug,
+  UsersRound,
+  KeyRound,
+} from "lucide-react";
+
 export default function Home() {
   return (
-    <main className="home">
+    <main className="home" id="topo">
 
       {/* NAVBAR */}
       <nav className="navbar">
@@ -27,6 +36,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
+
         <p className="hero-tag">
           ENCICLOPÉDIA DE CIBERSEGURANÇA
         </p>
@@ -42,8 +52,6 @@ export default function Home() {
         </p>
 
         <div className="search-box">
-          <span>🔍</span>
-
           <input
             type="text"
             placeholder="Pesquisar um conceito..."
@@ -51,18 +59,22 @@ export default function Home() {
         </div>
 
         <Link href="/conceitos" className="hero-button">
-          Explorar conceitos →
+          Explorar conceitos
         </Link>
+
       </section>
 
 
       {/* CONCEITOS EM DESTAQUE */}
       <section className="featured">
+
         <p className="section-tag">
           PARA COMEÇAR
         </p>
 
-        <h2>Comece por aqui</h2>
+        <h2>
+          Comece por aqui
+        </h2>
 
         <p className="section-description">
           Não sabe por onde começar? Explore alguns dos
@@ -75,16 +87,25 @@ export default function Home() {
             href="/conceitos/criptografia"
             className="featured-card"
           >
-            <span>🔐</span>
 
-            <h3>Criptografia</h3>
+            <LockKeyhole
+              size={32}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Criptografia
+            </h3>
 
             <p>
               Entenda como informações podem ser protegidas
               por meio de técnicas criptográficas.
             </p>
 
-            <strong>Explorar conceito →</strong>
+            <strong>
+              Explorar conceito →
+            </strong>
+
           </Link>
 
 
@@ -92,16 +113,25 @@ export default function Home() {
             href="/conceitos/malware"
             className="featured-card"
           >
-            <span>🦠</span>
 
-            <h3>Malware</h3>
+            <Bug
+              size={32}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Malware
+            </h3>
 
             <p>
               Conheça os principais tipos de softwares
               maliciosos e seus impactos.
             </p>
 
-            <strong>Explorar conceito →</strong>
+            <strong>
+              Explorar conceito →
+            </strong>
+
           </Link>
 
 
@@ -109,19 +139,29 @@ export default function Home() {
             href="/conceitos/phishing"
             className="featured-card"
           >
-            <span>🎣</span>
 
-            <h3>Phishing</h3>
+            <Network
+              size={32}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Phishing
+            </h3>
 
             <p>
               Aprenda como ataques de engenharia social
               podem explorar usuários.
             </p>
 
-            <strong>Explorar conceito →</strong>
+            <strong>
+              Explorar conceito →
+            </strong>
+
           </Link>
 
         </div>
+
       </section>
 
 
@@ -132,7 +172,9 @@ export default function Home() {
           CONHEÇA O CONTEÚDO
         </p>
 
-        <h2>O que você encontra no CyberWiki?</h2>
+        <h2>
+          O que você encontra no CyberWiki?
+        </h2>
 
         <p className="section-description">
           Conteúdos organizados para ajudar você a compreender
@@ -142,54 +184,114 @@ export default function Home() {
         <div className="topics-grid">
 
           <div className="topic-item">
-            <span>🔐</span>
-            <h3>Criptografia</h3>
+
+            <LockKeyhole
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Criptografia
+            </h3>
+
             <p>
               Proteção de informações e técnicas criptográficas.
             </p>
+
           </div>
 
+
           <div className="topic-item">
-            <span>🌐</span>
-            <h3>Redes</h3>
+
+            <Network
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Redes
+            </h3>
+
             <p>
               Comunicação, protocolos e segurança de redes.
             </p>
+
           </div>
 
+
           <div className="topic-item">
-            <span>🛡️</span>
-            <h3>Defesa</h3>
+
+            <ShieldCheck
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Defesa
+            </h3>
+
             <p>
               Mecanismos e práticas de proteção.
             </p>
+
           </div>
 
+
           <div className="topic-item">
-            <span>🦠</span>
-            <h3>Ameaças</h3>
+
+            <Bug
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Ameaças
+            </h3>
+
             <p>
               Malware, ataques e riscos digitais.
             </p>
+
           </div>
 
+
           <div className="topic-item">
-            <span>👥</span>
-            <h3>Controle de acesso</h3>
+
+            <UsersRound
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Controle de acesso
+            </h3>
+
             <p>
               Autenticação, autorização e gerenciamento de usuários.
             </p>
+
           </div>
 
+
           <div className="topic-item">
-            <span>🔑</span>
-            <h3>Segurança</h3>
+
+            <KeyRound
+              size={27}
+              strokeWidth={1.8}
+            />
+
+            <h3>
+              Segurança
+            </h3>
+
             <p>
               Fundamentos para proteção de sistemas e informações.
             </p>
+
           </div>
 
         </div>
+
       </section>
 
 
@@ -202,7 +304,9 @@ export default function Home() {
             SOBRE O PROJETO
           </p>
 
-          <h2>Conheça o CyberWiki</h2>
+          <h2>
+            Conheça o CyberWiki
+          </h2>
 
           <p>
             O CyberWiki é uma enciclopédia digital criada para
@@ -216,7 +320,10 @@ export default function Home() {
             acessível.
           </p>
 
-          <Link href="/sobre" className="about-button">
+          <Link
+            href="/sobre"
+            className="about-button"
+          >
             Conheça o projeto →
           </Link>
 
@@ -232,17 +339,30 @@ export default function Home() {
           CYBERWIKI
         </p>
 
-        <h2>Pronto para explorar?</h2>
+        <h2>
+          Pronto para explorar?
+        </h2>
 
         <p>
           Descubra conceitos e fundamentos de cibersegurança.
         </p>
 
-        <Link href="/conceitos" className="hero-button">
+        <Link
+          href="/conceitos"
+          className="hero-button"
+        >
           Explorar conceitos →
         </Link>
 
       </section>
+
+
+      {/* VOLTAR AO TOPO */}
+      <div className="back-to-top">
+        <a href="#topo">
+          ↑ Voltar ao topo
+        </a>
+      </div>
 
 
       {/* FOOTER */}
