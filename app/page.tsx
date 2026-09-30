@@ -1,20 +1,35 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="home">
+
+      {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo">
-          🛡️ CyberWiki
+          <Image
+            src="/logo.png"
+            alt="CyberWiki"
+            width={250}
+            height={50}
+          />
         </div>
 
         <div className="nav-links">
-          <a href="/">Início</a>
-          <a href="/conceitos">Conceitos</a>
-          <a href="/categorias">Categorias</a>
+          <Link href="/">Início</Link>
+          <Link href="/conceitos">Conceitos</Link>
+          <Link href="/categorias">Categorias</Link>
+          <Link href="/sobre">Sobre</Link>
         </div>
       </nav>
 
+
+      {/* HERO */}
       <section className="hero">
-        <p className="hero-tag">ENCICLOPÉDIA DE CIBERSEGURANÇA</p>
+        <p className="hero-tag">
+          ENCICLOPÉDIA DE CIBERSEGURANÇA
+        </p>
 
         <h1>
           Entenda a segurança digital
@@ -28,42 +43,221 @@ export default function Home() {
 
         <div className="search-box">
           <span>🔍</span>
+
           <input
             type="text"
             placeholder="Pesquisar um conceito..."
           />
         </div>
+
+        <Link href="/conceitos" className="hero-button">
+          Explorar conceitos →
+        </Link>
       </section>
 
-      <section className="categories">
-        <h2>Explore por categoria</h2>
 
-        <div className="category-grid">
-          <div className="category-card">
+      {/* CONCEITOS EM DESTAQUE */}
+      <section className="featured">
+        <p className="section-tag">
+          PARA COMEÇAR
+        </p>
+
+        <h2>Comece por aqui</h2>
+
+        <p className="section-description">
+          Não sabe por onde começar? Explore alguns dos
+          principais conceitos de cibersegurança.
+        </p>
+
+        <div className="featured-grid">
+
+          <Link
+            href="/conceitos/criptografia"
+            className="featured-card"
+          >
             <span>🔐</span>
+
             <h3>Criptografia</h3>
-            <p>Proteção e segurança de informações.</p>
-          </div>
 
-          <div className="category-card">
-            <span>🌐</span>
-            <h3>Redes</h3>
-            <p>Comunicação e segurança de redes.</p>
-          </div>
+            <p>
+              Entenda como informações podem ser protegidas
+              por meio de técnicas criptográficas.
+            </p>
 
-          <div className="category-card">
+            <strong>Explorar conceito →</strong>
+          </Link>
+
+
+          <Link
+            href="/conceitos/malware"
+            className="featured-card"
+          >
             <span>🦠</span>
-            <h3>Malware</h3>
-            <p>Ameaças e softwares maliciosos.</p>
-          </div>
 
-          <div className="category-card">
-            <span>🛡️</span>
-            <h3>Segurança</h3>
-            <p>Princípios fundamentais de proteção.</p>
-          </div>
+            <h3>Malware</h3>
+
+            <p>
+              Conheça os principais tipos de softwares
+              maliciosos e seus impactos.
+            </p>
+
+            <strong>Explorar conceito →</strong>
+          </Link>
+
+
+          <Link
+            href="/conceitos/phishing"
+            className="featured-card"
+          >
+            <span>🎣</span>
+
+            <h3>Phishing</h3>
+
+            <p>
+              Aprenda como ataques de engenharia social
+              podem explorar usuários.
+            </p>
+
+            <strong>Explorar conceito →</strong>
+          </Link>
+
         </div>
       </section>
+
+
+      {/* O QUE ENCONTRAR */}
+      <section className="topics">
+
+        <p className="section-tag">
+          CONHEÇA O CONTEÚDO
+        </p>
+
+        <h2>O que você encontra no CyberWiki?</h2>
+
+        <p className="section-description">
+          Conteúdos organizados para ajudar você a compreender
+          diferentes áreas da cibersegurança.
+        </p>
+
+        <div className="topics-grid">
+
+          <div className="topic-item">
+            <span>🔐</span>
+            <h3>Criptografia</h3>
+            <p>
+              Proteção de informações e técnicas criptográficas.
+            </p>
+          </div>
+
+          <div className="topic-item">
+            <span>🌐</span>
+            <h3>Redes</h3>
+            <p>
+              Comunicação, protocolos e segurança de redes.
+            </p>
+          </div>
+
+          <div className="topic-item">
+            <span>🛡️</span>
+            <h3>Defesa</h3>
+            <p>
+              Mecanismos e práticas de proteção.
+            </p>
+          </div>
+
+          <div className="topic-item">
+            <span>🦠</span>
+            <h3>Ameaças</h3>
+            <p>
+              Malware, ataques e riscos digitais.
+            </p>
+          </div>
+
+          <div className="topic-item">
+            <span>👥</span>
+            <h3>Controle de acesso</h3>
+            <p>
+              Autenticação, autorização e gerenciamento de usuários.
+            </p>
+          </div>
+
+          <div className="topic-item">
+            <span>🔑</span>
+            <h3>Segurança</h3>
+            <p>
+              Fundamentos para proteção de sistemas e informações.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* SOBRE */}
+      <section className="about-preview">
+
+        <div className="about-content">
+
+          <p className="section-tag">
+            SOBRE O PROJETO
+          </p>
+
+          <h2>Conheça o CyberWiki</h2>
+
+          <p>
+            O CyberWiki é uma enciclopédia digital criada para
+            facilitar o acesso ao conhecimento sobre
+            cibersegurança e segurança da informação.
+          </p>
+
+          <p>
+            A plataforma reúne conceitos, tecnologias e
+            fundamentos da área em uma linguagem simples e
+            acessível.
+          </p>
+
+          <Link href="/sobre" className="about-button">
+            Conheça o projeto →
+          </Link>
+
+        </div>
+
+      </section>
+
+
+      {/* CTA FINAL */}
+      <section className="final-cta">
+
+        <p className="section-tag">
+          CYBERWIKI
+        </p>
+
+        <h2>Pronto para explorar?</h2>
+
+        <p>
+          Descubra conceitos e fundamentos de cibersegurança.
+        </p>
+
+        <Link href="/conceitos" className="hero-button">
+          Explorar conceitos →
+        </Link>
+
+      </section>
+
+
+      {/* FOOTER */}
+      <footer className="footer">
+
+        <p>
+          © 2026 CyberWiki
+        </p>
+
+        <p>
+          Enciclopédia de Cibersegurança
+        </p>
+
+      </footer>
+
     </main>
   );
 }
