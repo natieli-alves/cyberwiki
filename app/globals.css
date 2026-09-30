@@ -1,26 +1,288 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #07111f;
+  color: #f5f7fa;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.home {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 20%, #182d52 0%, transparent 35%),
+    #07111f;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 72px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1b2b42;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #c8d2df;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #8b7cff;
+}
+
+/* HERO */
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 110px 20px 90px;
+  text-align: center;
+}
+
+.hero-tag {
+  color: #8b7cff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  color: #8b7cff;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 0 auto 35px;
+  color: #9eacbd;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.search-box {
+  max-width: 650px;
+  height: 58px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #101e31;
+  border: 1px solid #263b59;
+  border-radius: 12px;
+}
+
+.search-box span {
+  font-size: 18px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.search-box input::placeholder {
+  color: #718198;
+}
+
+/* CATEGORIAS */
+
+.categories {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+}
+
+.categories h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  padding: 28px 22px;
+  background: #0d1a2b;
+  border: 1px solid #1d304a;
+  border-radius: 14px;
+  transition: 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: #7468d9;
+}
+
+.category-card span {
+  font-size: 28px;
+}
+
+.category-card h3 {
+  margin: 18px 0 8px;
+  font-size: 18px;
+}
+
+.category-card p {
+  color: #8190a3;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 90px 30px 70px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 70px 20px 60px;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .search-box {
+    height: 54px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    padding: 30px 20px 70px;
+  }
+
+  .categories h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
 }
