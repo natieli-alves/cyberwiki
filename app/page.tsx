@@ -103,7 +103,7 @@ export default function Home() {
             </p>
 
             <strong>
-              Explorar conceito →
+              Explorar conceito
             </strong>
 
           </Link>
@@ -129,7 +129,7 @@ export default function Home() {
             </p>
 
             <strong>
-              Explorar conceito →
+              Explorar conceito 
             </strong>
 
           </Link>
@@ -155,7 +155,7 @@ export default function Home() {
             </p>
 
             <strong>
-              Explorar conceito →
+              Explorar conceito 
             </strong>
 
           </Link>
@@ -324,7 +324,7 @@ export default function Home() {
             href="/sobre"
             className="about-button"
           >
-            Conheça o projeto →
+            Conheça o projeto
           </Link>
 
         </div>
@@ -351,7 +351,7 @@ export default function Home() {
           href="/conceitos"
           className="hero-button"
         >
-          Explorar conceitos →
+          Explorar conceitos
         </Link>
 
       </section>
@@ -373,7 +373,7 @@ export default function Home() {
         </p>
 
         <p>
-          Enciclopédia de Cibersegurança
+          Por Natieli Alves
         </p>
 
       </footer>
