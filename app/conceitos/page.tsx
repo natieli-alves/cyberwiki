@@ -30,15 +30,13 @@ const conceitos = [
   },
   {
     nome: "Criptografia Simétrica",
-    descricao:
-      "Utiliza a mesma chave para cifrar e decifrar informações.",
+    descricao: "Utiliza a mesma chave para cifrar e decifrar informações.",
     icone: KeyRound,
     link: "/conceitos/criptografia-simetrica",
   },
   {
     nome: "Criptografia Assimétrica",
-    descricao:
-      "Utiliza um par de chaves: uma pública e uma privada.",
+    descricao: "Utiliza um par de chaves: uma pública e uma privada.",
     icone: LockOpen,
     link: "/conceitos/criptografia-assimetrica",
   },
@@ -128,8 +126,7 @@ const conceitos = [
   },
   {
     nome: "Exploit",
-    descricao:
-      "Técnica ou código utilizado para explorar uma vulnerabilidade.",
+    descricao: "Técnica ou código utilizado para explorar uma vulnerabilidade.",
     icone: Terminal,
     link: "/conceitos/exploit",
   },
@@ -138,15 +135,9 @@ const conceitos = [
 export default function Conceitos() {
   return (
     <main className="home" id="topo">
-
       <nav className="navbar">
         <div className="logo">
-          <Image
-            src="/logo.png"
-            alt="CyberWiki"
-            width={250}
-            height={50}
-          />
+          <Image src="/logo.png" alt="CyberWiki" width={250} height={50} />
         </div>
 
         <div className="nav-links">
@@ -156,25 +147,16 @@ export default function Conceitos() {
         </div>
       </nav>
 
-
       <section className="categories">
+        <p className="hero-tag">BASE DE CONHECIMENTO</p>
 
-        <p className="hero-tag">
-          BASE DE CONHECIMENTO
-        </p>
-
-        <h1>
-          Conceitos de Cibersegurança
-        </h1>
+        <h1>Conceitos de Cibersegurança</h1>
 
         <p className="hero-description">
-          Explore conceitos fundamentais relacionados à
-          segurança da informação.
+          Explore conceitos fundamentais relacionados à segurança da informação.
         </p>
 
-
         <div className="category-grid">
-
           {conceitos.map((conceito) => {
             const Icone = conceito.icone;
 
@@ -184,35 +166,20 @@ export default function Conceitos() {
                 key={conceito.nome}
                 className="category-card"
               >
+                <Icone size={32} strokeWidth={1.8} />
 
-                <Icone
-                  size={32}
-                  strokeWidth={1.8}
-                />
+                <h3>{conceito.nome}</h3>
 
-                <h3>
-                  {conceito.nome}
-                </h3>
-
-                <p>
-                  {conceito.descricao}
-                </p>
-
+                <p>{conceito.descricao}</p>
               </Link>
             );
           })}
-
         </div>
-
       </section>
 
-
       <div className="back-to-top">
-        <a href="#topo">
-          ↑ Voltar ao topo
-        </a>
+        <a href="#topo">↑ Voltar ao topo</a>
       </div>
-
     </main>
   );
 }
