@@ -8,9 +8,14 @@ export default function Categorias() {
     <main className="home" id="topo">
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">
-          <Image src="/logo.png" alt="CyberWiki" width={250} height={50} />
-        </div>
+        <Link href="/" className="logo">
+          <Image
+            src="/logo.png"
+            alt="CyberWiki"
+            width={250}
+            height={50}
+          />
+        </Link>
 
         <div className="nav-links">
           <Link href="/">Início</Link>

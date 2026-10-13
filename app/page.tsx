@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,6 +10,7 @@ import {
   Bug,
   UsersRound,
   KeyRound,
+  Search,
 } from "lucide-react";
 
 export default function Home() {
@@ -15,9 +18,14 @@ export default function Home() {
     <main className="home" id="topo">
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">
-          <Image src="/logo.png" alt="CyberWiki" width={250} height={50} />
-        </div>
+        <Link href="/" className="logo">
+          <Image
+            src="/logo.png"
+            alt="CyberWiki"
+            width={250}
+            height={50}
+          />
+        </Link>
 
         <div className="nav-links">
           <Link href="/">Início</Link>
@@ -41,9 +49,35 @@ export default function Home() {
           informação em um só lugar.
         </p>
 
-        <div className="search-box">
-          <input type="text" placeholder="Pesquisar um conceito..." />
-        </div>
+        <form
+          className="search-box"
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            const busca = e.currentTarget.elements.namedItem(
+              "busca"
+            ) as HTMLInputElement;
+
+            const slug = busca.value
+              .toLowerCase()
+              .trim()
+              .replaceAll(" ", "-");
+
+            if (slug) {
+              window.location.href = `/conceitos/${slug}`;
+            }
+          }}
+        >
+          <input
+            type="text"
+            name="busca"
+            placeholder="Pesquisar um conceito..."
+          />
+
+          <button type="submit" aria-label="Pesquisar">
+            <Search size={20} strokeWidth={2} />
+          </button>
+        </form>
 
         <Link href="/conceitos" className="hero-button">
           Explorar conceitos

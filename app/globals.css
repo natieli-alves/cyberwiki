@@ -16,18 +16,7 @@ body {
 
 .home {
   min-height: 100vh;
-  background:
-    radial-gradient(
-      circle at 50% 10%,
-      rgba(139, 92, 246, 0.22),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 10% 55%,
-      rgba(109, 40, 217, 0.12),
-      transparent 30%
-    ),
-    #0b0714;
+  background: #0b0714;
 }
 
 /* =========================
@@ -140,7 +129,7 @@ body {
   height: 58px;
 
   margin: 0 auto 25px;
-  padding: 0 20px;
+  padding: 0 6px 0 20px;
 
   display: flex;
   align-items: center;
@@ -161,10 +150,6 @@ body {
   box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
 }
 
-.search-box span {
-  font-size: 18px;
-}
-
 .search-box input {
   flex: 1;
 
@@ -180,6 +165,34 @@ body {
 
 .search-box input::placeholder {
   color: #756b87;
+}
+
+.search-box button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #140d22;
+
+  border: 1px solid #342052;
+  border-radius: 8px;
+
+  color: #a78bfa;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.search-box button:hover {
+  background: #1c1230;
+
+  border-color: #8b5cf6;
+
+  color: #c4b5fd;
 }
 
 /* =========================
@@ -409,7 +422,7 @@ body {
 
   background: radial-gradient(
     circle at center,
-    rgba(109, 40, 217, 0.18),
+    rgba(109, 40, 217, 0.10),
     transparent 55%
   );
 
@@ -517,6 +530,11 @@ body {
 
   .search-box {
     height: 54px;
+  }
+
+  .search-box button {
+    width: 40px;
+    height: 40px;
   }
 
   .featured,
@@ -633,10 +651,10 @@ body {
   box-shadow: 0 12px 35px rgba(109, 40, 217, 0.18);
 }
 
-.category-card span {
+.category-card svg {
   display: block;
 
-  font-size: 32px;
+  color: #a78bfa;
 
   margin-bottom: 20px;
 }
@@ -717,35 +735,46 @@ body {
 
 .about-page > h1 span {
   background: linear-gradient(90deg, #a78bfa, #7c3aed);
+
   background-clip: text;
   -webkit-background-clip: text;
+
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
 .about-intro {
   max-width: 700px;
+
   color: #aaa0bb;
+
   font-size: 19px;
   line-height: 1.7;
+
   margin-bottom: 70px;
 }
 
 .about-section {
   padding: 55px 0;
+
   border-top: 1px solid #21172f;
 }
 
 .about-section h2 {
   font-size: 28px;
+
   margin-bottom: 20px;
 }
 
 .about-section > p {
   max-width: 800px;
+
   color: #aaa0bb;
+
   font-size: 16px;
+
   line-height: 1.8;
+
   margin-bottom: 18px;
 }
 
@@ -753,22 +782,31 @@ body {
 
 .about-grid {
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 18px;
+
   margin-top: 30px;
 }
 
 .about-card {
   padding: 28px;
+
   background: linear-gradient(145deg, #160d26, #100a19);
+
   border: 1px solid #291a40;
+
   border-radius: 16px;
+
   transition: 0.25s;
 }
 
 .about-card:hover {
   transform: translateY(-4px);
+
   border-color: #8b5cf6;
+
   box-shadow: 0 12px 35px rgba(109, 40, 217, 0.18);
 }
 
@@ -778,12 +816,15 @@ body {
 
 .about-card h3 {
   margin: 18px 0 10px;
+
   font-size: 19px;
 }
 
 .about-card p {
   color: #8f849f;
+
   font-size: 14px;
+
   line-height: 1.6;
 }
 
@@ -791,17 +832,25 @@ body {
 
 .tech-list {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin-top: 28px;
 }
 
 .tech-list span {
   padding: 10px 16px;
+
   border-radius: 8px;
+
   background: #160d26;
+
   border: 1px solid #342052;
+
   color: #c8b9e8;
+
   font-size: 14px;
 }
 
@@ -809,12 +858,14 @@ body {
 
 .about-cta {
   margin-top: 40px;
+
   padding: 70px 30px;
+
   text-align: center;
 
   background: radial-gradient(
     circle at center,
-    rgba(109, 40, 217, 0.2),
+    rgba(109, 40, 217, 0.10),
     transparent 65%
   );
 
@@ -823,11 +874,13 @@ body {
 
 .about-cta h2 {
   font-size: 30px;
+
   margin-bottom: 12px;
 }
 
 .about-cta p {
   color: #968ba6;
+
   margin-bottom: 28px;
 }
 
@@ -844,6 +897,7 @@ body {
 
   .about-intro {
     font-size: 16px;
+
     margin-bottom: 45px;
   }
 
@@ -874,13 +928,23 @@ body {
   }
 }
 
+/* =========================
+   VOLTAR
+========================= */
+
 .back-home {
   display: block;
+
   width: fit-content;
+
   margin: 22px auto 0;
+
   color: #8f849f;
+
   text-decoration: none;
+
   font-size: 14px;
+
   transition: 0.2s;
 }
 
@@ -890,13 +954,17 @@ body {
 
 .back-to-top {
   text-align: center;
+
   padding: 25px 20px 35px;
 }
 
 .back-to-top a {
   color: #8f849f;
+
   text-decoration: none;
+
   font-size: 14px;
+
   transition: 0.2s;
 }
 
