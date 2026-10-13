@@ -194,30 +194,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* SOBRE */}
-      <section className="about-preview">
-        <div className="about-content">
-          <p className="section-tag">SOBRE O PROJETO</p>
-
-          <h2>Conheça o CyberWiki</h2>
-
-          <p>
-            O CyberWiki é uma enciclopédia digital criada para facilitar o
-            acesso ao conhecimento sobre cibersegurança e segurança da
-            informação.
-          </p>
-
-          <p>
-            A plataforma reúne conceitos, tecnologias e fundamentos da área em
-            uma linguagem simples e acessível.
-          </p>
-
-          <Link href="/sobre" className="about-button">
-            Conheça o projeto
-          </Link>
-        </div>
-      </section>
-
       {/* CTA FINAL */}
       <section className="final-cta">
         <p className="section-tag">CYBERWIKI</p>

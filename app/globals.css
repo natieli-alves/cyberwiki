@@ -378,38 +378,6 @@ body {
 }
 
 /* =========================
-   SOBRE
-========================= */
-
-.about-preview {
-  max-width: 1100px;
-
-  margin: 40px auto 0;
-
-  padding: 80px 20px;
-
-  border-top: 1px solid #21172f;
-}
-
-.about-content {
-  max-width: 720px;
-}
-
-.about-content p:not(.section-tag) {
-  color: #aaa0bb;
-
-  font-size: 16px;
-
-  line-height: 1.7;
-
-  margin-bottom: 18px;
-}
-
-.about-button {
-  margin-top: 15px;
-}
-
-/* =========================
    CTA FINAL
 ========================= */
 
