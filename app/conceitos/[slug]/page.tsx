@@ -34,7 +34,7 @@ export default async function ConceitoPage({ params }: Props) {
           <div className="nav-links">
             <Link href="/">Início</Link>
             <Link href="/conceitos">Conceitos</Link>
-            <Link href="/categorias">Categorias</Link>
+            <Link href="/categorias">Segurança na Internet</Link>
             <Link href="/sobre">Sobre</Link>
           </div>
         </nav>
@@ -101,7 +101,10 @@ export default async function ConceitoPage({ params }: Props) {
           <p>{conceito.conteudo}</p>
         </div>
 
-        <Link href="/conceitos" className="hero-button">
+        <Link
+          href="/conceitos"
+          className="hero-button concept-back-button"
+        >
           ← Voltar aos conceitos
         </Link>
       </section>

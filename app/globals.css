@@ -939,3 +939,7 @@ body {
 .back-to-top a:hover {
   color: #a78bfa;
 }
+
+.concept-back-button {
+  margin-top: 30px;
+}

@@ -63,7 +63,8 @@ export default async function Conceitos() {
         <div className="nav-links">
           <Link href="/">Início</Link>
           <Link href="/conceitos">Conceitos</Link>
-          <Link href="/categorias">Categorias</Link>
+          <Link href="/categorias">Segurança na Internet</Link>
+          <Link href="/sobre">Sobre</Link>
         </div>
       </nav>
 
