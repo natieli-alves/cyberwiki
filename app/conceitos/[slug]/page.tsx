@@ -56,6 +56,18 @@ export default async function ConceitoPage({ params }: Props) {
     );
   }
 
+  // Registra uma visualização do conceito
+  await prisma.conceito.update({
+    where: {
+      id: conceito.id,
+    },
+    data: {
+      visualizacoes: {
+        increment: 1,
+      },
+    },
+  });
+
   return (
     <main className="home">
       <nav className="navbar">

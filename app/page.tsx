@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,10 +8,54 @@ import {
   Bug,
   UsersRound,
   KeyRound,
-  Search,
+  CircleDollarSign,
+  Fish,
+  Brain,
+  LockOpen,
+  Hash,
+  Key,
+  GlobeLock,
+  UserCheck,
+  ShieldPlus,
+  TriangleAlert,
+  Terminal,
 } from "lucide-react";
 
-export default function Home() {
+import prisma from "./lib/prisma";
+import SearchBox from "./components/SearchBox";
+
+const icones = {
+  criptografia: LockKeyhole,
+  "criptografia-simetrica": KeyRound,
+  "criptografia-assimetrica": LockOpen,
+  hash: Hash,
+  "chave-criptografica": Key,
+  malware: Bug,
+  ransomware: CircleDollarSign,
+  phishing: Fish,
+  "engenharia-social": Brain,
+  firewall: ShieldCheck,
+  vpn: GlobeLock,
+  autenticacao: UserCheck,
+  mfa: ShieldPlus,
+  rbac: UsersRound,
+  vulnerabilidade: TriangleAlert,
+  exploit: Terminal,
+};
+
+export default async function Home() {
+  const principais = await prisma.conceito.findMany({
+    orderBy: [
+      {
+        visualizacoes: "desc",
+      },
+      {
+        id: "asc",
+      },
+    ],
+    take: 3,
+  });
+
   return (
     <main className="home" id="topo">
       {/* NAVBAR */}
@@ -49,35 +91,7 @@ export default function Home() {
           informação em um só lugar.
         </p>
 
-        <form
-          className="search-box"
-          onSubmit={(e) => {
-            e.preventDefault();
-
-            const busca = e.currentTarget.elements.namedItem(
-              "busca"
-            ) as HTMLInputElement;
-
-            const slug = busca.value
-              .toLowerCase()
-              .trim()
-              .replaceAll(" ", "-");
-
-            if (slug) {
-              window.location.href = `/conceitos/${slug}`;
-            }
-          }}
-        >
-          <input
-            type="text"
-            name="busca"
-            placeholder="Pesquisar um conceito..."
-          />
-
-          <button type="submit" aria-label="Pesquisar">
-            <Search size={20} strokeWidth={2} />
-          </button>
-        </form>
+        <SearchBox />
 
         <Link href="/conceitos" className="hero-button">
           Explorar conceitos
@@ -86,53 +100,35 @@ export default function Home() {
 
       {/* CONCEITOS EM DESTAQUE */}
       <section className="featured">
-        <p className="section-tag">PARA COMEÇAR</p>
+        <p className="section-tag">MAIS ACESSADOS</p>
 
-        <h2>Comece por aqui</h2>
+        <h2>Principais conceitos</h2>
 
         <p className="section-description">
-          Não sabe por onde começar? Explore alguns dos principais conceitos de
-          cibersegurança.
+          Confira os conceitos mais acessados pelos visitantes do CyberWiki.
         </p>
 
         <div className="featured-grid">
-          <Link href="/conceitos/criptografia" className="featured-card">
-            <LockKeyhole size={32} strokeWidth={1.8} />
+          {principais.map((conceito) => {
+            const Icone =
+              icones[conceito.slug as keyof typeof icones];
 
-            <h3>Criptografia</h3>
+            return (
+              <Link
+                href={`/conceitos/${conceito.slug}`}
+                className="featured-card"
+                key={conceito.id}
+              >
+                {Icone && <Icone size={32} strokeWidth={1.8} />}
 
-            <p>
-              Entenda como informações podem ser protegidas por meio de técnicas
-              criptográficas.
-            </p>
+                <h3>{conceito.nome}</h3>
 
-            <strong>Explorar conceito</strong>
-          </Link>
+                <p>{conceito.descricao}</p>
 
-          <Link href="/conceitos/malware" className="featured-card">
-            <Bug size={32} strokeWidth={1.8} />
-
-            <h3>Malware</h3>
-
-            <p>
-              Conheça os principais tipos de softwares maliciosos e seus
-              impactos.
-            </p>
-
-            <strong>Explorar conceito</strong>
-          </Link>
-
-          <Link href="/conceitos/phishing" className="featured-card">
-            <Network size={32} strokeWidth={1.8} />
-
-            <h3>Phishing</h3>
-
-            <p>
-              Aprenda como ataques de engenharia social podem explorar usuários.
-            </p>
-
-            <strong>Explorar conceito</strong>
-          </Link>
+                <strong>Explorar conceito</strong>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
