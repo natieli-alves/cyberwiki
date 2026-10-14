@@ -81,7 +81,7 @@ export default async function Conceitos() {
 
         <div className="category-grid">
           {conceitos.map((conceito) => {
-            const Icone = icones[conceito.slug as keyof typeof icones];
+            const Icone = icones[conceito.slug as keyof typeof icones] ?? ShieldCheck;
 
             return (
               <Link
