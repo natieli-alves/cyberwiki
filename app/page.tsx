@@ -211,7 +211,7 @@ export default async function Home() {
 
       {/* VOLTAR AO TOPO */}
       <div className="back-to-top">
-        <a href="#topo">↑ Voltar ao topo</a>
+        <a href="#topo">Voltar ao topo</a>
       </div>
 
       {/* FOOTER */}

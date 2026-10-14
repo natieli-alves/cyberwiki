@@ -101,7 +101,7 @@ export default async function Conceitos() {
       </section>
 
       <div className="back-to-top">
-        <a href="#topo">↑ Voltar ao topo</a>
+        <a href="#topo">Voltar ao topo</a>
       </div>
     </main>
   );

@@ -105,7 +105,7 @@ export default async function ConceitoPage({ params }: Props) {
           href="/conceitos"
           className="hero-button concept-back-button"
         >
-          ← Voltar aos conceitos
+        Voltar aos conceitos
         </Link>
       </section>
     </main>

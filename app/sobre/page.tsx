@@ -89,12 +89,10 @@ export default function Sobre() {
           <p>Comece pelos conceitos fundamentais de cibersegurança.</p>
 
           <Link href="/conceitos" className="hero-button">
-            Explorar conceitos →
+            Explorar conceitos
           </Link>
 
-          <Link href="/" className="back-home">
-            ← Voltar a página inicial
-          </Link>
+          <Link href="/" className="back-home"> Voltar a página inicial</Link>
         </div>
       </section>
 
